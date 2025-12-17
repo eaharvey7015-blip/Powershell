@@ -1,0 +1,20 @@
+collectors:
+  enabled: 'cpu,cs,logical_disk,net,os,system,service'
+
+collector:
+  service:
+    services-where: (Name LIKE 'OracleOraDB19Home1TNSListenerlist_MDB') OR (Name LIKE 'OracleServiceMDB')
+
+log:
+  level: info
+
+scrape:
+  timeout-margin: 0.5
+
+telemetry:
+  path: /metrics
+  max-requests: 5
+
+web:
+  listen-address: ":9182"
+  
