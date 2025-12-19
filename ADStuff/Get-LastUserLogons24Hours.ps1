@@ -27,7 +27,7 @@
         Server, TimeCreated, Domain, UserName, LogonType
 
 .NOTES
-    Author : <Your Name>
+    Author : <Anthony Harvey>
     Version: 1.0
     Requirements:
       - PowerShell 5.1 or higher
@@ -69,5 +69,6 @@ $logons = Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4624; StartTime
 
 # Export clean CSV
 $logons | Export-Csv -Path $outputCsv -NoTypeInformation
+
 
 Write-Host "Logon data saved to $outputCsv — ready for Excel" -ForegroundColor Green
